@@ -1,17 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="zh_CN">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="styles.css">
-  <title>Vanilla JavaScript App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem Set</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
-
 <body>
-  <main>
-    <h1>Vanilla JavaScript App</h1>
-  </main>
-</body>
+<div class="sidebar">
+    <div class="logo">
+        <img src="logo.webp" alt="Logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="#">首页</a></li>
+            <li><a href="#" class="active">题库</a></li>
+            <li><a href="#">比赛</a></li>
+            <li><a href="#">课程</a></li>
+            <li><a href="#">题单</a></li>
+            <li><a href="#">排名</a></li>
+            <li><a href="#">评测记录</a></li>
+            <li><a href="#">IDE</a></li>
+            <li><a href="#">讨论</a></li>
+        </ul>
+    </nav>
+    <div class="user">
+        <img src="user.png" alt="User">
+    </div>
+</div>
+<div class="content">
+    <header>
+        <h1>题库</h1>
+        <div class="filters">
+            <label>
+                <select>
+                    <option value="">难度</option>
+                </select>
+            <select>
+                <option value="">标签</option>
+            </select>
 
+            <input type="text" placeholder="搜索题目、编号或内容">
+            </label>
+            <label>
+                <input type="checkbox"> 显示标签
+            </label>
+        </div>
+    </header>
+    <table>
+        <thead>
+        <tr>
+            <th>状态</th>
+            <th>编号</th>
+            <th>题目名称</th>
+            <th>难度</th>
+            <th>通过率</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr onclick="openProblem('P1001.md')">
+            <td>status</td>
+            <td>P1001</td>
+            <td>太阳何候</td>
+            <td>暂无评定</td>
+            <td><div class="progress"><div class="bar" style="width: 60%;"></div></div></td>
+        </tr>
+        <!-- More rows as needed -->
+        </tbody>
+    </table>
+</div>
+<div class="markdown-viewer" id="markdown-viewer" style="width: 50%; height: 100%; position: fixed; top: 0; right: -50%; transition: right 0.5s;">
+    <iframe id="problem-iframe" style="width:100%; height:100%; border:none;"></iframe>
+    <button onclick="closeProblem()" style="position: absolute; top: 10px; right: 10px;">Close</button>
+</div>
+</body>
 </html>

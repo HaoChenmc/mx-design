@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Problem Viewer</title>
+    <script src="scripts.js"></script>
+    <script src="marked.min.js"></script>
+    <style>
+        body
+        {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            margin: 0;
+            overflow-y: auto;
+            background: #f7f7f7;
+        }
+        .copy-btn
+        {
+            margin-left: 5px;
+            cursor: pointer;
+        }
+        button
+        {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+<div id="markdown-content">Loading...</div>
+<button onclick="copyToClipboard()">获取剪切板并提交</button>
+<button onclick="openDetailPage()">题目详细</button>
+</body>
+</html>
